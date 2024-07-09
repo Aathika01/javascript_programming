@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+         .even {
+  background-color: green;
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  margin: 5px;
+  text-align: center;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.odd {
+  background-color: yellow;
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  margin: 5px;
+  text-align: center;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.prime {
+  background-color: red;
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  margin: 5px;
+  text-align: center;
+  padding: 5px;
+  border-radius: 5px;
+}
+  </style>
+  <script>
+              const container = document.getElementById("container");
+
+        for (let i = 1; i <= 100; i++) {
+          const numDiv = document.createElement("div");
+          numDiv.textContent = i;
+
+          if (isPrime(i)) {
+            numDiv.classList.add("prime");
+          } else if (i % 2 === 0) {
+            numDiv.classList.add("even");
+          } else {
+            numDiv.classList.add("odd");
+          }
+
+          container.appendChild(numDiv);
+        }
+
+        function isPrime(num) {
+          if (num <= 1) return false;
+          for (let i = 2; i * i <= num; i++) {
+            if (num % i === 0) return false;
+          }
+          return true;
+        }
+  </script>
+</head>
+<body>
+  <div id="container"></div>
+</body>
+</html>

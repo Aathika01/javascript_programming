@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+         #container {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            }
+
+            #key-code, #key {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            }
+    </style>
+    <script>
+        const keyCodeElement = document.getElementById("key-code");
+        const keyElement = document.getElementById("key");
+
+        document.addEventListener("keydown", (event) => {
+        keyCodeElement.textContent = `Key Code: ${event.keyCode}`;
+        keyElement.textContent = `Key: ${event.key}`;
+        });
+    </script>
+</head>
+<body>
+    <div id="container">
+        <h1>Press a key</h1>
+        <p id="key-code"></p>
+        <p id="key"></p>
+      </div>
+</body>
+</html>
